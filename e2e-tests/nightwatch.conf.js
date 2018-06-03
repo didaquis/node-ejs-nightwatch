@@ -5,7 +5,7 @@ module.exports = {
 	'src_folders': [
 		'./e2e-tests/tests/'// Where you are storing your Nightwatch e2e tests
 	],
-	'output_folder': './e2e-tests/reports', // reports (test outcome) output by nightwatch
+	'output_folder': './e2e-tests/reports/', // reports (test outcome) output by nightwatch
 	'selenium': {
 		'start_process': true, // tells nightwatch to start/stop the selenium process
 		'server_path': seleniumServer.path,
@@ -18,8 +18,8 @@ module.exports = {
 	'test_settings': {
 		'default': {
 			'screenshots': {
-				'enabled': false, // if you want to keep screenshots
-				'path': './e2e-tests/screenshots' // save screenshots here
+				'enabled': true, // if you want to keep screenshots
+				'path': './e2e-tests/screenshots/' // save screenshots here, but you can define it when you do the screenshot
 			},
 			'globals': {
 				'waitForConditionTimeout': 5000 // sometimes internet is slow so wait.
