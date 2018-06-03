@@ -11,6 +11,11 @@ Include e2e tests using the Nightwatch library.
 For run test: `npm run e2e`
 
 
+## Requirements
+* Selenium requires Java/JDK.
+* Chrome browser on your machine for run test
+
+
 ## Links
 * EJS - Embedded JavaScript templating. http://ejs.co
-* Nightwatch.js http://nightwatchjs.org
+* Nightwatch.js http://nightwatchjs.org + Selenium
