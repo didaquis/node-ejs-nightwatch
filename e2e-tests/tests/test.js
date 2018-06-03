@@ -6,6 +6,7 @@ module.exports = {
 			.url('http://localhost:8080/')
 			.waitForElementVisible('body')
 			.assert.title('node-ejs-nightwatch')
+			.saveScreenshot('guinea-pig-test.png')
 			.end();
 	}
 };
