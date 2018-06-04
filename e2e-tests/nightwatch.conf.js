@@ -13,7 +13,8 @@ module.exports = {
 		'port': 4444, // standard selenium port
 		'cli_args': {
 			'webdriver.chrome.driver' : chromedriver.path
-		}
+		},
+		'log_path' : './e2e-tests/logs/'
 	},
 	'test_settings': {
 		'default': {
