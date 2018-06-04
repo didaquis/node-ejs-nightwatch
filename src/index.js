@@ -20,10 +20,10 @@ app.use(function(req, res){
 
 // managing server start
 const port = 8080;
-app.listen(port, () => console.log(`Server listening on port: ${port}`) );
+app.listen(port, () => console.log(`Server listening on port: ${port}`) ); // eslint-disable-line no-console
 
 // managing stop shutdown
 process.on('SIGINT', () =>{
-	console.log('\nStopping server...');
+	console.log('\nStopping server...'); // eslint-disable-line no-console
 	process.exit();
 });
