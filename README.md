@@ -20,3 +20,9 @@ For running tests: `npm run e2e`
 ## Links and useful information
 * EJS - Embedded JavaScript templating. http://ejs.co
 * Nightwatch.js http://nightwatchjs.org
+
+**Tip:** install Java JDK on a Mac using [Homebrew](https://brew.sh):
+```sh
+brew update
+brew cask install java
+```
