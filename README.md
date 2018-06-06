@@ -8,7 +8,7 @@ Include e2e tests using the Nightwatch library.
 * Install dependencies `npm install`
 * Execute script with `node .` or `npm start`  
 
-For running tests: `npm run e2e`
+For running tests: `npm run e2e`. Require server running.
 
 
 ## Requirements
