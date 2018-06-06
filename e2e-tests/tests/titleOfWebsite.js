@@ -2,6 +2,8 @@
 
 const config = require('../nightwatch.conf.js');
 
+const time = new Date().getTime();
+
 module.exports = {
 	'Title should be: node-ejs-nightwatch': function (browser) {
 		browser
@@ -9,7 +11,7 @@ module.exports = {
 			.waitForElementVisible('body')
 			.assert.title('node-ejs-nightwatch')
 			.pause(1000)
-			.saveScreenshot('./e2e-tests/screenshots/title.png')
+			.saveScreenshot(`./e2e-tests/screenshots/screenshot_${time}.png`)
 			.end();
 	}
 };
