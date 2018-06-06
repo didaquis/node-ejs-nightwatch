@@ -2,6 +2,13 @@
 
 const config = require('../nightwatch.conf.js');
 
+
+// text target
+const textOfTitle = 'Home';
+const textOfSecondaryTitle = 'This is dummy content from server';
+const textOfLorem = 'Lorem ipsum dolor sit amet';
+
+
 module.exports = {
 
 	before: function (browser) {
@@ -18,15 +25,15 @@ module.exports = {
 		browser.end();
 	},
 
-	'Main title of Home page should be: Home': function (browser) {
-		browser.expect.element('h1').text.to.equal('Home');
+	'Main title of Home page should be correct': function (browser) {
+		browser.expect.element('h1').text.to.equal(textOfTitle);
 	},
 
 	'Secondary title of Home page should be data from server': function (browser) {
-		browser.assert.containsText('h2', 'This is dummy content from server');
+		browser.assert.containsText('h2', textOfSecondaryTitle);
 	},
 
-	'Main text of Home page should be lorem text': function (browser) {
-		browser.assert.containsText('p.lead', 'Lorem ipsum dolor sit amet');
+	'Main text of Home page should contain lorem text': function (browser) {
+		browser.assert.containsText('p.lead', textOfLorem);
 	}
 };
