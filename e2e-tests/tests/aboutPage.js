@@ -9,6 +9,7 @@ module.exports = {
 		browser.maximizeWindow();
 		browser.url('http://localhost:8080/about');
 		browser.waitForElementVisible('body');
+		browser.removeAllCookies(); // custom command!
 		browser.pause(1000);
 	},
 
