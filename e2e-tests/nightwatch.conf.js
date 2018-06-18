@@ -15,7 +15,7 @@ module.exports = {
 		'cli_args': {
 			'webdriver.chrome.driver' : chromedriver.path
 		},
-		'log_path' : './e2e-tests/logs/'
+		'log_path' : './e2e-tests/logs-e2e/'
 	},
 	'test_settings': {
 		'default': {
