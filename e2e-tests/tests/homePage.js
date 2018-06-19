@@ -33,6 +33,10 @@ module.exports = {
 		browser.assert.containsText('h2', textOfSecondaryTitle);
 	},
 
+	'Main text of Home page should have css class named lead': function (browser) {
+		browser.assert.cssClassPresent('p','lead', 'Assert if p element have a css class named lead');
+	},
+
 	'Main text of Home page should contain lorem text': function (browser) {
 		browser.assert.containsText('p.lead', textOfLorem);
 	}
