@@ -1,6 +1,6 @@
 {
   "name": "node-ejs-nightwatch",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "Example of server-side rendering with EJS and e2e tests using Nightwatch",
   "main": "src/index.js",
   "scripts": {
