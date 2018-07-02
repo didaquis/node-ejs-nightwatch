@@ -7,7 +7,10 @@ const config = require('../nightwatch.conf.js');
 const textOfTitle = 'Home';
 const textOfSecondaryTitle = 'This is dummy content from server';
 const textOfLorem = 'Lorem ipsum dolor sit amet';
+const reg = /^\bVersion\b[\s]{1}(\d+\.)(\d+\.)(\d+)$/; // valid pattern => Version 2.02.678
 
+// selectors
+const paragraphVersionSelector = 'p.lead + p'; // This selector means: next sibling of <p class="lead"></p>
 
 module.exports = {
 
@@ -39,5 +42,9 @@ module.exports = {
 
 	'Main text of Home page should contain lorem text': function (browser) {
 		browser.assert.containsText('p.lead', textOfLorem);
+	},
+
+	'Paragraph should contain value of software version': function (browser) {
+		browser.expect.element(paragraphVersionSelector).text.to.match(reg);
 	}
 };
