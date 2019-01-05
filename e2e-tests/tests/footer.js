@@ -12,6 +12,8 @@ const smallTime = 1000;
 
 module.exports = {
 
+	'@disabled': false, // If value is true, this prevent this test module from running.
+
 	before: function(browser) {
 		browser.maximizeWindow();
 		browser.url('http://localhost:8080/');
