@@ -13,7 +13,7 @@ routes(app);
 
 // managing wrong routes
 app.use(function(req, res){
-	res.status(404);
+	res.status(404); // eslint-disable-line no-magic-numbers
 	res.render('404');
 });
 
@@ -23,7 +23,7 @@ const port = 8080;
 app.listen(port, () => console.log(`Server listening on port: ${port}`) ); // eslint-disable-line no-console
 
 // managing stop shutdown
-process.on('SIGINT', () =>{
+process.on('SIGINT', () => {
 	console.log('\nStopping server...'); // eslint-disable-line no-console
 	process.exit();
 });

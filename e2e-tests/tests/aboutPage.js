@@ -1,7 +1,5 @@
 'use strict';
 
-const config = require('../nightwatch.conf.js');
-
 // text target
 const textOfTitle = 'About';
 const textOfModal = 'This is an example modal';
@@ -14,45 +12,46 @@ const modal 				= '#exampleModal';
 const modalBody 			= 'div.modal-body';
 const modalCloseButton		= 'div.modal-header > button.close';
 
+// timmings
+const smallTime = 1000;
+const mediumTime = 2000;
 
 module.exports = {
 
-	before: function (browser) {
-		console.log('\nSetting up browser...'); // eslint-disable-line no-console
+	before: function(browser) {
 		browser.maximizeWindow();
 		browser.url('http://localhost:8080/about');
 		browser.waitForElementVisible('body');
 		browser.removeAllCookies(); // custom command!
-		browser.pause(1000);
+		browser.pause(smallTime);
 	},
 
-	after: function (browser) {
-		console.log('\nClosing down browser...'); // eslint-disable-line no-console
+	after: function(browser) {
 		browser.end();
 	},
 
-	'Main title of About page should be correct': function (browser) {
+	'Main title of About page should be correct': function(browser) {
 		browser.expect.element('h1').text.to.equal(textOfTitle);
 	},
 
-	'Button for open modal should be visible': function (browser) {
+	'Button for open modal should be visible': function(browser) {
 		browser.expect.element(buttonForOpenModal).to.be.present;
 		browser.assert.cssClassPresent(buttonForOpenModal, 'btn');
 		browser.assert.cssClassPresent(buttonForOpenModal, primaryButton);
 	},
 
-	'Modal should be visible': function (browser) {
+	'Modal should be visible': function(browser) {
 		browser.expect.element(modal).to.not.be.visible;
 		browser.waitForElementVisible(buttonForOpenModal);
 		browser.click(buttonForOpenModal);
-		browser.waitForElementVisible(modal, 2000, 'element %s present in %d ms');
+		browser.waitForElementVisible(modal, mediumTime, 'element %s present in %d ms');
 		browser.expect.element(modalBody).text.to.equal(textOfModal);
 	},
 
-	'Modal should be closed': function (browser){
+	'Modal should be closed': function(browser){
 		browser.expect.element(modal).to.be.visible;
 		browser.assert.elementPresent(modalCloseButton);
 		browser.click(modalCloseButton);
-		browser.waitForElementNotVisible(modal, 2000);
+		browser.waitForElementNotVisible(modal, mediumTime);
 	}
 };
