@@ -1,9 +1,9 @@
 {
   "name": "node-ejs-nightwatch",
-  "version": "0.4.22",
+  "version": "0.5.25",
   "private": true,
   "description": "Example of server-side rendering with EJS and e2e tests using Nightwatch",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node .",
     "e2e": "nightwatch --config e2e-tests/nightwatch.conf.js"
@@ -18,7 +18,8 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "pkginfo": "^0.4.1"
+    "pkginfo": "^0.4.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "chromedriver": "^2.45.0",

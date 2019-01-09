@@ -1,0 +1,26 @@
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<h1 class="display-4"><%= content.dataForTitle %></h1>
+	<%- include('../components/modal', { id: 'exampleModal', modalTitle: 'Title of modal', modalBodyText: '<p>This is an example modal!<p>'}); %>
+	<%- include('../components/modal-button', { id: 'buttonForOpenModal', className: 'btn btn-primary', target: '#exampleModal', text: 'Launch demo modal' }); %>
+</div>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<% 
+	if (content.users) {
+		%>
+		<div class="row">
+			<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+				<div class="list-group">
+					<%
+					content.users.forEach( (user) => {
+					%>
+						<%- include('../components/user-list-item', { userData: user }); %>
+					<%
+					});
+					%>
+				</div>
+			</div>
+		</div>
+		<%
+	};
+	%>
+</div>

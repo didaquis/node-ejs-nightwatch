@@ -1,6 +1,6 @@
 # node-ejs-nightwatch
 This repository is an example of a server-side rendering website with EJS.  
-Include e2e tests using the Nightwatch library.
+Include an example of e2e (endpoint to endpoint) tests using the Nightwatch library.
 
 
 ## How to use

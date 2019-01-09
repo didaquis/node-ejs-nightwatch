@@ -2,15 +2,16 @@
 
 // text target
 const textOfTitle = 'About';
-const textOfModal = 'This is an example modal';
+const textOfModal = 'This is an example modal!';
 
 
 // selectors
 const buttonForOpenModal 	= '#buttonForOpenModal';
 const primaryButton			= 'btn-primary';
 const modal 				= '#exampleModal';
-const modalBody 			= 'div.modal-body';
+const modalBodyText 		= 'div.modal-body p';
 const modalCloseButton		= 'div.modal-header > button.close';
+const listOfUsers		= 'div.list-group';
 
 // timmings
 const smallTime = 1000;
@@ -47,7 +48,7 @@ module.exports = {
 		browser.waitForElementVisible(buttonForOpenModal);
 		browser.click(buttonForOpenModal);
 		browser.waitForElementVisible(modal, mediumTime, 'element %s present in %d ms');
-		browser.expect.element(modalBody).text.to.equal(textOfModal);
+		browser.expect.element(modalBodyText).text.to.equal(textOfModal);
 	},
 
 	'Modal should be closed': function(browser){
@@ -55,5 +56,10 @@ module.exports = {
 		browser.assert.elementPresent(modalCloseButton);
 		browser.click(modalCloseButton);
 		browser.waitForElementNotVisible(modal, mediumTime);
+	},
+
+	'List of users will be available': function(browser){
+		browser.expect.element(listOfUsers).to.be.visible;
+		browser.assert.elementPresent(listOfUsers);
 	}
 };

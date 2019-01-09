@@ -1,0 +1,16 @@
+<!-- user list item component -->
+<a href="#" class="list-group-item list-group-item-action flex-column align-items-start" id="<%= userData.id %>">
+	<div class="d-flex w-100 justify-content-between">
+		<h5 class="mb-2"><%= userData.name %></h5>
+		<small><%= userData.email %></small>
+	</div>
+	<%
+	if (userData.address) {
+		for (let addressKey in userData.address) {
+			%>
+			<p class="mb-1"><strong><%= addressKey.toUpperCase() %>:</strong> <%= userData.address[addressKey] %></p>
+			<%
+		}
+	}
+	%>
+</a>

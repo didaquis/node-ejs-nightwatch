@@ -3,7 +3,7 @@
 const time = new Date().getTime();
 
 // text target
-const textOfTitle = 'node-ejs-nightwatch';
+const textOfTitle = 'Welcome';
 
 // timmings
 const smallTime = 1000;
