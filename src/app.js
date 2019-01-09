@@ -11,10 +11,19 @@ app.use(express.static('public'));
 const routes = require('./routes/routes.js');
 routes(app);
 
-// managing wrong routes
+// Manage of broken routes
 app.use(function(req, res){
 	res.status(404); // eslint-disable-line no-magic-numbers
-	res.render('404');
+
+	const locals = {
+		titleOfPage: 'Error 404',
+		templateName: 'pages/404',
+		content: {
+			dataForTitle: '404'
+		}
+	};
+
+	res.render('mainLayout', locals);
 });
 
 
