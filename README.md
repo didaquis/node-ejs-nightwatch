@@ -8,13 +8,13 @@ Include an example of e2e (endpoint to endpoint) tests using the Nightwatch libr
 * Install dependencies `npm install`
 * Execute script with `node .` or `npm start`  
 
-For running tests: `npm run e2e`. Require server running.
+For running tests: `npm run e2e`. Server must be running.
 
 
 ## Requirements
 * Nightwatch requires Selenium
 * Selenium requires Java/JDK 8 or higher.
-* Chrome browser on your machine for run test
+* Chrome browser on your machine for running the test
 
 
 ## Links and useful information
