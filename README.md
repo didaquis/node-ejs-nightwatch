@@ -12,9 +12,7 @@ For running tests: `npm run e2e`. Server must be running.
 
 
 ## Requirements
-* Nightwatch requires Selenium
-* Selenium requires Java/JDK 8 or higher.
-* Chrome browser on your machine for running the test
+* Chrome browser installed on your machine for running the test
 
 
 ## Links and useful information
