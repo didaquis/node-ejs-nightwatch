@@ -1,4 +1,3 @@
-const seleniumServer = require('selenium-server');
 const chromedriver = require('chromedriver');
 
 module.exports = {
@@ -7,18 +6,34 @@ module.exports = {
 	],
 	'custom_commands_path': './e2e-tests/custom-commands/',
 	'output_folder': './e2e-tests/reports/', // reports (test outcome) output by nightwatch
-	'selenium': {
-		'start_process': true, // tells nightwatch to start/stop the selenium process
-		'server_path': seleniumServer.path,
+	'webdriver' : {
+		'start_process': true, // tells nightwatch to start/stop the process by itself
+		'server_path': chromedriver.path,
 		'host': '127.0.0.1',
-		'port': 4444, // standard selenium port
-		'cli_args': {
-			'webdriver.chrome.driver' : chromedriver.path
-		},
+		'port': 9515,
 		'log_path' : './e2e-tests/logs-e2e/'
+	},
+	'test_workers': {
+		'enabled': true, // Set to true to allow run test in parallel. No compatible with execute test in more than one browser
+		'workers': 'auto'
 	},
 	'test_settings': {
 		'default': {
+			'webdriver': {
+				'server_path': chromedriver.path
+			},
+			'desiredCapabilities': { // use Chrome as the default browser for tests
+				'browserName': 'chrome'
+			}
+		},
+		'chrome': {
+			'webdriver' : {
+				'start_process': true, // tells nightwatch to start/stop the process by itself
+				'server_path': chromedriver.path,
+				'host': '127.0.0.1',
+				'port': 9515,
+				'log_path' : './e2e-tests/logs-e2e/'
+			},
 			'screenshots': {
 				'enabled': true, // if you want to keep screenshots
 				'path': './e2e-tests/screenshots/' // save screenshots here, but you can define it when you do the screenshot
@@ -26,14 +41,10 @@ module.exports = {
 			'globals': {
 				'waitForConditionTimeout': 5000 // sometimes internet is slow so wait.
 			},
-			'desiredCapabilities': { // use Chrome as the default browser for tests
-				'browserName': 'chrome'
-			}
-		},
-		'chrome': {
 			'desiredCapabilities': {
 				'browserName': 'chrome',
-				'javascriptEnabled': true // turn off to test progressive enhancement
+				'javascriptEnabled': true, // turn off to test progressive enhancement
+				'acceptInsecureCerts' : true
 			}
 		}
 	}
