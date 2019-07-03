@@ -1,12 +1,12 @@
 {
   "name": "node-ejs-nightwatch",
-  "version": "0.5.26",
+  "version": "0.5.27",
   "private": true,
   "description": "Example of server-side rendering with EJS and e2e tests using Nightwatch",
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
-    "e2e": "nightwatch --config e2e-tests/nightwatch.conf.js"
+    "e2e": "nightwatch --config e2e-tests/nightwatch.conf.js -e chrome"
   },
   "keywords": [
     "node.js",
@@ -22,7 +22,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "chromedriver": "^2.46.0",
+    "chromedriver": "^75.0.1",
     "nightwatch": "^1.1.13"
   }
 }

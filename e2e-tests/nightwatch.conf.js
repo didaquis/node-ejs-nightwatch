@@ -14,16 +14,25 @@ module.exports = {
 		'log_path' : './e2e-tests/logs-e2e/'
 	},
 	'test_workers': {
-		'enabled': true,
+		'enabled': true, // Set to true to allow run test in parallel. No compatible with execute test in more than one browser
 		'workers': 'auto'
 	},
 	'test_settings': {
 		'default': {
 			'webdriver': {
+				'server_path': chromedriver.path
+			},
+			'desiredCapabilities': { // use Chrome as the default browser for tests
+				'browserName': 'chrome'
+			}
+		},
+		'chrome': {
+			'webdriver' : {
+				'start_process': true, // tells nightwatch to start/stop the process by itself
 				'server_path': chromedriver.path,
-				'cli_args': [
-					'--log', 'debug'
-				]
+				'host': '127.0.0.1',
+				'port': 9515,
+				'log_path' : './e2e-tests/logs-e2e/'
 			},
 			'screenshots': {
 				'enabled': true, // if you want to keep screenshots
@@ -32,11 +41,6 @@ module.exports = {
 			'globals': {
 				'waitForConditionTimeout': 5000 // sometimes internet is slow so wait.
 			},
-			'desiredCapabilities': { // use Chrome as the default browser for tests
-				'browserName': 'chrome'
-			}
-		},
-		'chrome': {
 			'desiredCapabilities': {
 				'browserName': 'chrome',
 				'javascriptEnabled': true, // turn off to test progressive enhancement

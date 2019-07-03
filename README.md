@@ -13,14 +13,9 @@ For running tests: `npm run e2e`. Server must be running.
 
 ## Requirements
 * Chrome browser installed on your machine for running the test
+* Firefox browser installed on your machine for running the test
 
 
 ## Links and useful information
 * EJS - Embedded JavaScript templating. http://ejs.co
 * Nightwatch.js http://nightwatchjs.org
-
-**Tip:** install Java JDK on a Mac using [Homebrew](https://brew.sh):
-```sh
-brew update
-brew cask install java
-```
