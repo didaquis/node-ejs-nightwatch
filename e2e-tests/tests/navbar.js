@@ -27,15 +27,15 @@ module.exports = {
 		browser.elements('css selector', linksOfNavbar, function(result) {
 			let dinamicSelector;
 			result.value.forEach((res) => {
-				browser.elementIdAttribute(res.ELEMENT, 'id', function(idValue) {
+				const firstKey = 0;
+				const keyOfElement = Object.keys(res)[firstKey];
+				browser.elementIdAttribute(res[keyOfElement], 'id', function(idValue) {
 					dinamicSelector = `#${idValue.value}`; // creating a dinamic selector of element through 'id' attribute value.
 					browser.expect.element(dinamicSelector).to.be.an('a', 'Testing if element is HTML tag: \'a\' (link)');
 					browser.expect.element(dinamicSelector).text.to.match(/.{1,}/); // contain some text
 					browser.expect.element(dinamicSelector).to.be.visible;
 				});
 			});
-
-			// browser.elementIdClick(result.value[0].ELEMENT); // This is an example of doing click on the first result
 		});
 	}
 };
