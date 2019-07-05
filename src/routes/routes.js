@@ -4,7 +4,7 @@ const uuidv4 = require('uuid/v4');
 
 const dataPackageJSON = require('../utils/dataFromPackageJSON.js');
 
-module.exports = function(app) {
+module.exports = function (app) {
 
 	app.get('/', (req, res) => {
 

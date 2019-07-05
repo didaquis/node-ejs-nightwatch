@@ -12,7 +12,7 @@ const routes = require('./routes/routes.js');
 routes(app);
 
 // Manage of broken routes
-app.use(function(req, res){
+app.use(function (req, res){
 	res.status(404); // eslint-disable-line no-magic-numbers
 
 	const locals = {
