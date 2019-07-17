@@ -12,7 +12,7 @@ module.exports = {
 
 	'@disabled': false, // If value is true, this prevent this test module from running.
 
-	'Title should be correct': function(browser) {
+	'Title should be correct': function (browser) {
 		browser
 			.url('http://localhost:8080/')
 			.waitForElementVisible('body')

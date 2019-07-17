@@ -14,7 +14,7 @@ module.exports = {
 
 	'@disabled': false, // If value is true, this prevent this test module from running.
 
-	before: function(browser) {
+	before: function (browser) {
 		browser.maximizeWindow();
 		browser.url('http://localhost:8080/');
 		browser.waitForElementVisible('body');
@@ -22,11 +22,11 @@ module.exports = {
 		browser.pause(smallTime);
 	},
 
-	after: function(browser) {
+	after: function (browser) {
 		browser.end();
 	},
 
-	'Footer should contain link to GitHub': function(browser) {
+	'Footer should contain link to GitHub': function (browser) {
 		browser.expect.element(linkOnFooterSelector).to.be.visible;
 		browser.expect.element(linkOnFooterSelector).text.to.equal(linkText);
 		browser.assert.attributeEquals(linkOnFooterSelector, 'href', linkURL);

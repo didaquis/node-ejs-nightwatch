@@ -6,7 +6,8 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
-    "e2e": "nightwatch --config e2e-tests/nightwatch.conf.js -e chrome,firefox"
+    "e2e": "nightwatch --config e2e-tests/nightwatch.conf.js -e chrome,firefox",
+    "lint": "eslint --ext .js ."
   },
   "keywords": [
     "node.js",
