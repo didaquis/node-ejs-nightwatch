@@ -7,7 +7,7 @@
 // timmings
 const smallTime = 1000;
 
-exports.command = function(callback) {
+exports.command = function (callback) {
 	this.deleteCookies();
 	this.pause(smallTime);
 

@@ -20,7 +20,7 @@ module.exports = {
 
 	'@disabled': false, // If value is true, this prevent this test module from running.
 
-	before: function(browser) {
+	before: function (browser) {
 		browser.maximizeWindow();
 		browser.url('http://localhost:8080/about');
 		browser.waitForElementVisible('body');
@@ -28,21 +28,21 @@ module.exports = {
 		browser.pause(smallTime);
 	},
 
-	after: function(browser) {
+	after: function (browser) {
 		browser.end();
 	},
 
-	'Main title of About page should be correct': function(browser) {
+	'Main title of About page should be correct': function (browser) {
 		browser.expect.element('h1').text.to.equal(textOfTitle);
 	},
 
-	'Button for open modal should be visible': function(browser) {
+	'Button for open modal should be visible': function (browser) {
 		browser.expect.element(buttonForOpenModal).to.be.present;
 		browser.assert.cssClassPresent(buttonForOpenModal, 'btn');
 		browser.assert.cssClassPresent(buttonForOpenModal, primaryButton);
 	},
 
-	'Modal should be visible': function(browser) {
+	'Modal should be visible': function (browser) {
 		browser.expect.element(modal).to.not.be.visible;
 		browser.waitForElementVisible(buttonForOpenModal);
 		browser.click(buttonForOpenModal);
@@ -50,7 +50,7 @@ module.exports = {
 		browser.expect.element(modalBodyText).text.to.equal(textOfModal);
 	},
 
-	'Modal should be closed': function(browser) {
+	'Modal should be closed': function (browser) {
 		browser.expect.element(modal).to.be.visible;
 		browser.expect.element(modalCloseButton).to.be.visible.before(smallTime);
 		browser.pause(smallTime);
@@ -59,7 +59,7 @@ module.exports = {
 		browser.waitForElementNotVisible(modal, mediumTime);
 	},
 
-	'List of users will be available': function(browser) {
+	'List of users will be available': function (browser) {
 		browser.expect.element(listOfUsers).to.be.visible;
 		browser.assert.elementPresent(listOfUsers);
 	}
