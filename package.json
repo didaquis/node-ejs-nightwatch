@@ -1,13 +1,15 @@
 {
   "name": "node-ejs-nightwatch",
-  "version": "0.5.30",
+  "version": "0.5.32",
   "private": true,
   "description": "Example of server-side rendering with EJS and e2e tests using Nightwatch",
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
     "e2e": "nightwatch --config e2e-tests/nightwatch.conf.js -e chrome,firefox",
-    "lint": "eslint --ext .js ."
+    "e2e-basic-test": "nightwatch --config e2e-tests/nightwatch.conf.js -e chrome,firefox --tag basic-test",
+    "lint": "eslint --ext .js .",
+    "purge": "rm -fr ./e2e-tests/logs/*.log  && rm -fr ./e2e-tests/reports/*.xml && rm -fr ./e2e-tests/screenshots/*.png"
   },
   "keywords": [
     "node.js",

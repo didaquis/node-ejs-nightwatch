@@ -12,7 +12,7 @@ module.exports = {
 		'server_path': chromedriver.path,
 		'host': '127.0.0.1',
 		'port': 9515,
-		'log_path' : './e2e-tests/logs-e2e/'
+		'log_path' : './e2e-tests/logs/'
 	},
 	'test_workers': {
 		'enabled': false, // Set to true to allow run test in parallel. No compatible with execute test in more than one browser
@@ -33,7 +33,7 @@ module.exports = {
 				'server_path': chromedriver.path,
 				'host': '127.0.0.1',
 				'port': 9515,
-				'log_path' : './e2e-tests/logs-e2e/'
+				'log_path' : './e2e-tests/logs/'
 			},
 			'screenshots': {
 				'enabled': true, // if you want to keep screenshots
